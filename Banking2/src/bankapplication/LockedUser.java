@@ -1,7 +1,13 @@
 package bankapplication;
 
-public class LockedUser extends Customer {
+import java.io.Serializable;
+
+public class LockedUser extends Customer implements Serializable {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -1645045181987147315L;
 	private Account account; //customer can have an account
 	private String name;
 	private String password; // last name CHANGE IT

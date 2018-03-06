@@ -6,11 +6,12 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.util.Scanner;
 import bankapplication.RunBank;
 
 
-public class Admin extends Customer{
+public class Admin extends Customer implements Serializable{
 	
 	private Account account; //customer can have an account
 	private String name;

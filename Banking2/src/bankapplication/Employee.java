@@ -6,9 +6,14 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.util.Scanner;
 
-public class Employee extends Customer {
+public class Employee extends Customer implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -4395077132295823391L;
 	private Account account; //customer can have an account
 	private String name;
 	private String password; // last name CHANGE IT

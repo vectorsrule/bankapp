@@ -11,9 +11,26 @@ public class Bank {
 	private static ArrayList<Account> acc = new ArrayList<Account>();
 	private static ArrayList<Transactions> t = new ArrayList<Transactions>();
 	private static ArrayList<Employee> empl = new ArrayList<Employee>();
-	private static ArrayList<Users> users = new ArrayList<Users>();
 	private static ArrayList<LockedUser> lu = new ArrayList<LockedUser>();
+    Employee employ = new Employee("John Smith ", "password1 ", 123456789 ); 
+    Admin admin = new Admin("Richmond Breninger", "password2 ", 123456781, "Admin" ); 
+    Customer custy = new Customer("John Smith ", "password1 ", 123456789 ); 
 	
+	public  Bank() {
+		customers1.add(employ);
+		customers1.add(admin);
+		customers1.add(custy);
+		a1.add(admin);
+		empl.add(employ);
+	}
+	
+	public void startBank() {
+		if (Bank.class.equals(null)) {
+			Bank b = new Bank();
+		}
+	}
+	
+
 	
 	public static ArrayList<LockedUser> getLu() {
 		return lu;
@@ -68,10 +85,6 @@ public static Customer getCuz(int accountNum) {
 		return empl;
 	}
 
-	public static ArrayList<Users> getUsers() {
-		return users;
-	}
-
 	public static Account[] getAccounts() {
 		return accounts;
 	}
@@ -84,8 +97,8 @@ public static Customer getCuz(int accountNum) {
 		
 	}
 
-	private static Customer customers[] = new Customer[30]; //bank has multiple customers
-	private static Account accounts[] = new Account[30];
+	private static Customer customers[] = new Customer[30];
+	private static Account accounts[] = new Account[30]; 
 	Admin a = new Admin("Admin", "aPassword", 5, "Admin");
 	
 
@@ -107,17 +120,7 @@ public static Customer getCuz(int accountNum) {
 		return 0;  // will return if fails to create account
 	}
 	
-	public double getBalance(double accountNumber) {
-		for(int i = 0;i < Bank.getCustomers1().size();i++) { 
-			if(accountNumber == customers[i].getAccount().getAccountNumber()) {
-			
-				return customers[i].getAccount().getBalance();
-			}
-			}
-		System.out.println("No Account Found");
-		return -1;
-		
-	}
+
 	
 	public Customer getCustomer(double accountNumber) {
 		

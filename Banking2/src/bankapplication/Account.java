@@ -38,4 +38,16 @@ public void setBalance(double balance) {
 	this.balance = balance;
 }
 
+//public double getBalance(double accountNumber) {
+//	for(int i = 0;i < Bank.getCustomers1().size();i++) { 
+//		if(accountNumber == customers[i].getAccount().getAccountNumber()) {
+//		
+//			return customers[i].getAccount().getBalance();
+//		}
+//		}
+//	System.out.println("No Account Found");
+//	return -1;
+//	
+//}
+
 }

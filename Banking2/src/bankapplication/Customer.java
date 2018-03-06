@@ -1,7 +1,13 @@
 package bankapplication;
 
-public class Customer {
+import java.io.Serializable;
+
+public class Customer implements Serializable {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -6801120831533554290L;
 	private Account account; //customer can have an account
 	private String name;
 	private String password;

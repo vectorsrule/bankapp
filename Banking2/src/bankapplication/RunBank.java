@@ -40,7 +40,7 @@ public class RunBank {
 			
 			case 1: 
 				createAccount(); 
-				System.out.println("Enter amount to open account:");
+			//	System.out.println("Enter amount to open account:");
 //				double accountNumber =b.openAccount(scanner.nextDouble());
 //				if(accountNumber!=0)
 //					System.out.println("Here is you account number: " +accountNumber);
@@ -78,7 +78,8 @@ public class RunBank {
 				break;
 			case 4: 
 				System.out.println("Enter account number:");
-				double balance = b.getBalance(scanner.nextLong());
+				int accountNum = scanner.nextInt();
+				double balance = Bank.getCuz(accountNum).getAccount().getBalance();
 				if(balance == -1 )
 					System.out.println("Account Number Not Found");
 				else
@@ -101,19 +102,23 @@ public class RunBank {
 	
 		// TODO Auto-generated method stub
 		public void createAccount() {
-			System.out.println("Make a new account please");
-			System.out.println("Please type in your Name");
-			String name = scanner.nextLine();
-			System.out.println("Please type in password");
-			String password=scanner.nextLine();
+			System.out.println("Make a new account please \n");
+			System.out.println("Please type in your UsernameName");
+			String name = scanner.next();
 			System.out.println("Type in social security number");
 			int ssn = scanner.nextInt();
-			while(ssnCheck(ssn)) {
+			scanner.nextLine();
+			System.out.println("Please type in password");
+			String password=scanner.nextLine();
+			
+			
+			if(ssnCheck(ssn)) {
 			LockedUser lu = new LockedUser(name,password,ssn);
 			Bank.addLu(lu);
 			
 			try(ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("lockedUsers.dat"))){
 				
+				//System.out.println("Done");
 				oos.writeObject(lu);
 				System.out.println("Done");
 				System.out.println(lu);
@@ -126,7 +131,7 @@ public class RunBank {
 				e.printStackTrace();
 			}
 			
-			try(ObjectInputStream ois = new ObjectInputStream(new FileInputStream("lockedUser.dat"))){
+			try(ObjectInputStream ois = new ObjectInputStream(new FileInputStream("lockedUsers.dat"))){
 				
 				LockedUser locker = (LockedUser) ois.readObject();
 				
@@ -147,7 +152,7 @@ public class RunBank {
 			// checking to make sure all information is correct. Validation checks.
 				
 			}
-		
+		 
 				
 		}
 		public boolean ssnCheck(int ssn) {
@@ -162,6 +167,8 @@ public class RunBank {
 			
 			
 		}
+		
+		// Need to return back to menu after file serialized.
 	/*	public LockedUser(String name, String password, int ssn) {
 			super();
 			this.name = name;

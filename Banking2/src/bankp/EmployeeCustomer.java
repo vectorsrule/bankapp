@@ -6,7 +6,7 @@ public class EmployeeCustomer extends Customer {
 	private String contactOfficePhone; 
 	
 	public EmployeeCustomer(String name) {
-		super(name);
+		//super(name);
 		
 		
 	}
