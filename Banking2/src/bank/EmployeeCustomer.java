@@ -1,12 +1,14 @@
 package bank;
 
+import bankapplication.Customer;
+
 public class EmployeeCustomer extends Customer {
 	
 	private String contactPerson;
 	private String contactOfficePhone; 
 	
 	public EmployeeCustomer(String name) {
-		super(name);
+		//super(name);
 		
 		
 	}

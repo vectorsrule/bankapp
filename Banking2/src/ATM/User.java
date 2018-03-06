@@ -51,7 +51,7 @@ public class User {
 		
 		this.accounts = new ArrayList<Account>();
 		
-		System.out.printlnf();
+		//System.out.printlnf();
 		
 	}
 

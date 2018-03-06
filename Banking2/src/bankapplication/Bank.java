@@ -108,7 +108,7 @@ public static Customer getCuz(int accountNum) {
 	}
 	
 	public double getBalance(double accountNumber) {
-		for(int i = 0;i < Bank.getCustomers().length;i++) { 
+		for(int i = 0;i < Bank.getCustomers1().size();i++) { 
 			if(accountNumber == customers[i].getAccount().getAccountNumber()) {
 			
 				return customers[i].getAccount().getBalance();

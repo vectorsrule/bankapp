@@ -1,5 +1,7 @@
 package bank;
 
+import bankapplication.Customer;
+
 public class PersonalCustomer extends Customer {
 	
 	
@@ -8,7 +10,7 @@ public class PersonalCustomer extends Customer {
 	
 	public PersonalCustomer(String name) {
 		
-		super(name);
+		//super(name);
 		
 		
 	}
@@ -23,7 +25,7 @@ public class PersonalCustomer extends Customer {
 		return homePhone;
 	}
 	public void setId(double id) {
-		this.id = id;
+		//this.id = id;
 	}
 
 }

@@ -53,16 +53,17 @@ public class Customer {
 	public Account getAccount() {
 		return account;
 	}
-	public boolean deposit(double accountNumber, double amount) { //deposit feature that points at account number along with how much you'd like to deposit
+	public static boolean deposit(int accountNumber, double amount) { //deposit feature that points at account number along with how much you'd like to deposit
 		boolean status=false;
 		if(amount> 0) { // if amount is greater than zero than only you can perform deposit
-		for(int i = 0;i < Bank.getCustomers().length ;i++) { //for loop to search if the account number is valid.
-				if(Bank.getCustomers()[i].getAccount().getAccountNumber()==accountNumber) {//searching the counter for only existing accounts
+		for(int i = 0;i < Bank.getCustomers1().size() ;i++) { //for loop to search if the account number is valid.
+				if(Bank.getCustomers1().get(i).getAccount().getAccountNumber()==accountNumber) {//searching the counter for only existing accounts
 					
-					Bank.getCustomers()[i].getAccount().setBalance(Bank.getCustomers()[i].getAccount().getBalance() +amount);//adds deposit to current amount in account
+					Bank.getCustomers1().get(i).getAccount().setBalance(Bank.getCustomers1().get(i).getAccount().getBalance() +amount);//adds deposit to current amount in account
 					status = true;
 				//	return 
 					 //successful deposit
+//					Bank.getBank().getspecificCustomer().getAccount().setBalance();
 				}
 						
 		}
@@ -70,13 +71,13 @@ public class Customer {
 		return status;//status = 0 -->invalid amount or invalid account number
 					   //status 1 -->deposited
 	}
-	public boolean withdraw(double accountNumber, double amount) {
+	public static boolean withdraw(int accountNumber, double amount) {
 		boolean status=false;
-		if(amount> 0) { // if amount is greater than zero than only you can perform deposit
-		for(int i = 0;i < Bank.getCustomers().length ;i++) { //for loop to search if the account number is valid.
-				if(Bank.getCustomers()[i].getAccount().getAccountNumber()==accountNumber) {//searching the counter for only existing accounts
+		if(amount> 0 && amount <10000) { // if amount is greater than zero than only you can perform withdraw, cannot withdraw more than 10,000$ at a time
+		for(int i = 0;i < Bank.getCustomers1().size() ;i++) { //for loop to search if the account number is valid.
+				if(Bank.getCustomers1().get(i).getAccount().getAccountNumber()==accountNumber) {//searching the counter for only existing accounts
 					
-					Bank.getCustomers()[i].getAccount().setBalance(Bank.getCustomers()[i].getAccount().getBalance() -amount);//adds deposit to current amount in account
+					Bank.getCustomers1().get(i).getAccount().setBalance(Bank.getCustomers1().get(i).getAccount().getBalance() -amount);//adds deposit to current amount in account
 					status = true;
 				
 				}
@@ -85,6 +86,8 @@ public class Customer {
 		}
 		return status;//status = 0 -->invalid amount or invalid account number
 					   //status 1 -->deposited
+		
+		
 	}
 
 }

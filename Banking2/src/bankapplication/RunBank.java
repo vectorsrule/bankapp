@@ -20,10 +20,9 @@ public class RunBank {
 	Scanner scanner = new Scanner(System.in);
 	static Bank b= new Bank();
 
-	@SuppressWarnings("resource")
+//	@SuppressWarnings("resource")
 	public static void main(String[] args) {
-		
-		while(true) {
+		RunBank rb = new RunBank();
 			System.out.println("1. Open an Account");
 			System.out.println("2. Deposit");
 			System.out.println("3. Withdraw");
@@ -31,12 +30,9 @@ public class RunBank {
 			System.out.println("5. Admin Login");
 			System.out.println("6. Employee Login");
 			System.out.println("7. exit");
-		}
-		RunBank rb = new RunBank();
-		rb.theMenu();
+			rb.theMenu();
 	}
-			public void theMenu( ) {
-			Scanner scanner = new Scanner(System.in);
+	public void theMenu( ) {
 			System.out.println("Enter Option : ");
 			int option =  scanner.nextInt();
 			
@@ -44,8 +40,8 @@ public class RunBank {
 			
 			case 1: 
 				createAccount(); 
-//				System.out.println("Enter amount to open account:");
-//				double accountNumber =b.createAccount(scanner.nextDouble());
+				System.out.println("Enter amount to open account:");
+//				double accountNumber =b.openAccount(scanner.nextDouble());
 //				if(accountNumber!=0)
 //					System.out.println("Here is you account number: " +accountNumber);
 //				else
@@ -54,21 +50,31 @@ public class RunBank {
 				break;
 			case 2:
 				System.out.println("Enter account number than  the amount in next line:");
-				double depositStatus = b..deposit(scanner.nextDouble(),scanner.nextDouble()); //make this access a specific user using scanner
-				if(depositStatus!=0 ) //you will need getters and other methods from the bank to make this access a specific account
-					System.out.println("Deposited"); //ask your roommates for help, dont be shy!
-				else
-					System.out.println("Fails to deposit");
-				
+				int choice = scanner.nextInt();
+				for (int o = 0; o < Bank.getCustomers1().size(); o++) {
+					if (Bank.getCustomers1().get(o).getAccount().getAccountNumber() == choice) {
+						Bank.getCustomers1().get(o);
+						boolean depositStatus = Customer.deposit(scanner.nextInt(),scanner.nextDouble()); //make this access a specific user using scanner
+						if(depositStatus!= false ) //you will need getters and other methods from the bank to make this access a specific account
+							System.out.println("Deposited"); //ask your roommates for help, dont be shy!
+						else
+							System.out.println("Fails to deposit");
+					}
+				}
 				break;
 			case 3: 
-				System.out.println("Enter account number,than the amount in next line:");
-				int withdrawStatus = b.withdraw(scanner.nextLong(),scanner.nextDouble());
-				if(withdrawStatus!=0 )
-					System.out.println("Withdraw Successful");
-				else
-					System.out.println("Fails to withdraw");
-				
+				System.out.println("Enter account number than  the amount in next line:");
+				int choice2 = scanner.nextInt();
+				for (int o = 0; o < Bank.getCustomers1().size(); o++) {
+					if (Bank.getCustomers1().get(o).getAccount().getAccountNumber() == choice2) {
+						Bank.getCustomers1().get(o);
+						boolean withdrawStatus = Customer.deposit(scanner.nextInt(),scanner.nextDouble()); //make this access a specific user using scanner
+						if(withdrawStatus!= false ) //you will need getters and other methods from the bank to make this access a specific account
+							System.out.println("Withdrawn"); //ask your roommates for help, dont be shy!
+						else
+							System.out.println("Fails to withdraw");
+					}
+				}
 				break;
 			case 4: 
 				System.out.println("Enter account number:");
@@ -82,7 +88,7 @@ public class RunBank {
 			case 5: 
 				System.out.println("Admin login");
 				Admin a = new Admin();
-				a.adminMenu();; //added type cast to int/switched accounts to accountNumbers??
+				a.adminMenu(); //added type cast to int/switched accounts to accountNumbers??
 				break;
 			case 6: System.exit(0);
 				
@@ -90,7 +96,9 @@ public class RunBank {
 			}
 			
 		}
-	}
+
+
+	
 		// TODO Auto-generated method stub
 		public void createAccount() {
 			System.out.println("Make a new account please");
@@ -100,9 +108,10 @@ public class RunBank {
 			String password=scanner.nextLine();
 			System.out.println("Type in social security number");
 			int ssn = scanner.nextInt();
-			while(!ssnCheck(ssn)) {//takee out ! if it doesnt work
+			while(ssnCheck(ssn)) {
 			LockedUser lu = new LockedUser(name,password,ssn);
-			b.addLu(lu);
+			Bank.addLu(lu);
+			
 			try(ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("lockedUsers.dat"))){
 				
 				oos.writeObject(lu);
@@ -143,7 +152,7 @@ public class RunBank {
 		}
 		public boolean ssnCheck(int ssn) {
 			
-			for(Customer c: b.getCustomers1()) {
+			for(Customer c: Bank.getCustomers1()) {
 				if(c.getSsn() == ssn) {
 					System.out.println("Give me unique social security number");
 					return true;
