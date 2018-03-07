@@ -18,11 +18,13 @@ public class RunBank {
 	 * @param args
 	 */
 	Scanner scanner = new Scanner(System.in);
-	static Bank b= new Bank();
+	
 
 //	@SuppressWarnings("resource")
 	public static void main(String[] args) {
 		RunBank rb = new RunBank();
+		Bank.startBank();
+
 			System.out.println("1. Open an Account");
 			System.out.println("2. Deposit");
 			System.out.println("3. Withdraw");
@@ -98,24 +100,24 @@ public class RunBank {
 			
 		}
 
-
 	
 		// TODO Auto-generated method stub
 		public void createAccount() {
 			System.out.println("Make a new account please \n");
 			System.out.println("Please type in your UsernameName");
 			String name = scanner.next();
+			scanner.nextLine();
 			System.out.println("Type in social security number");
 			int ssn = scanner.nextInt();
 			scanner.nextLine();
 			System.out.println("Please type in password");
-			String password=scanner.nextLine();
+			String password=scanner.next();
 			
 			
 			if(ssnCheck(ssn)) {
 			LockedUser lu = new LockedUser(name,password,ssn);
 			Bank.addLu(lu);
-			
+			System.out.println("User added");
 			try(ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("lockedUsers.dat"))){
 				
 				//System.out.println("Done");
@@ -152,11 +154,12 @@ public class RunBank {
 			// checking to make sure all information is correct. Validation checks.
 				
 			}
+			 else
+				System.out.println("User not added");
 		 
 				
 		}
 		public boolean ssnCheck(int ssn) {
-			
 			for(Customer c: Bank.getCustomers1()) {
 				if(c.getSsn() == ssn) {
 					System.out.println("Give me unique social security number");

@@ -5,7 +5,7 @@ import java.util.ArrayList;
 //import BankApp.Account;
 
 public class Bank {
-	
+	public static Bank b;
 	private static ArrayList<Customer> customers1 = new ArrayList<Customer>();
 	private static ArrayList<Admin>  a1 = new ArrayList<Admin>();
 	private static ArrayList<Account> acc = new ArrayList<Account>();
@@ -24,10 +24,12 @@ public class Bank {
 		empl.add(employ);
 	}
 	
-	public void startBank() {
-		if (Bank.class.equals(null)) {
-			Bank b = new Bank();
+	public static Bank startBank() {
+		if (b == null) {
+		    b = new Bank();
+		   
 		}
+		 return b;
 	}
 	
 

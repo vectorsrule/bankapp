@@ -116,12 +116,12 @@ public class Admin extends Customer implements Serializable{
 		System.out.println("Enter the account number of the user you want to lock-in");
 		String decision = scanner.nextLine();
 		boolean check = false;
-		RunBank rb = new RunBank();
-		for(int i = 0; i < rb.b.getCustomers1().size(); i++) {
-			if(rb.b.getCustomers1().get(i).getAccount().getAccountNumber() == accountNumber) {
-				LockedUser lu = new LockedUser(rb.b.getCustomers1().get(i).getName(), rb.b.getCustomers1().get(i).getPassword(),rb.b.getCustomers1().get(i).getSsn());
+		//RunBank rb = new RunBank();
+		for(int i = 0; i < Bank.getCustomers1().size(); i++) {
+			if(Bank.getCustomers1().get(i).getAccount().getAccountNumber() == accountNumber) {
+				LockedUser lu = new LockedUser(Bank.getCustomers1().get(i).getName(), Bank.getCustomers1().get(i).getPassword(),Bank.getCustomers1().get(i).getSsn());
 //						( String name, String password, int ssn)
-				rb.b.getLu().add(lu);
+				Bank.getLu().add(lu);
 				try(ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("notLockedUsers.dat"))){
 					
 					oos.writeObject(lu);
