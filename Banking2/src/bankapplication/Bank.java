@@ -12,9 +12,9 @@ public class Bank {
 	private static ArrayList<Transactions> t = new ArrayList<Transactions>();
 	private static ArrayList<Employee> empl = new ArrayList<Employee>();
 	private static ArrayList<LockedUser> lu = new ArrayList<LockedUser>();
-    Employee employ = new Employee("John Smith ", "password1 ", 123456789 ); 
-    Admin admin = new Admin("Richmond Breninger", "password2 ", 123456781, "Admin" ); 
-    Customer custy = new Customer("John Smith ", "password1 ", 123456789 ); 
+    Employee employ = new Employee("JoeSmith", "password1", 123456789 ); 
+    Admin admin = new Admin("Admin", "password2", 123456781, "Admin" ); 
+    Customer custy = new Customer("JohnSmith", "password1", 123456789 ); 
 	
 	public  Bank() {
 		customers1.add(employ);
@@ -106,24 +106,7 @@ public static Customer getCuz(int accountNum) {
 
 	 // keep track of customer with acct
 	//open account
-	
-	public double openAccount(int ssn,String name,String password,double openingBalance) {
 		
-		if(openingBalance >0 ) { //must be above zero to deposit
-			
-			if(customerCounter < customers.length) {
-				customers[customerCounter]= new Customer(); //customer invokes constructor
-				customers[customerCounter].getAccount().setBalance(openingBalance); 
-				customerCounter ++;
-				return customers[customerCounter -1].getAccount().getAccountNumber(); //successful creation of account
-			}		
-			
-		}
-		return 0;  // will return if fails to create account
-	}
-	
-
-	
 	public Customer getCustomer(double accountNumber) {
 		
 		for(Customer C : customers) {

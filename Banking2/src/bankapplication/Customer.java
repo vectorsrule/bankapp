@@ -28,7 +28,7 @@ public class Customer implements Serializable {
 		this.name = name;
 		this.password = password;
 		this.ssn = ssn;
-		this.type="regular";//locked
+		this.type="regular";
 	}
 
 

@@ -72,7 +72,7 @@ public class RunBank {
 						Bank.getCustomers1().get(o);
 						boolean withdrawStatus = Customer.deposit(scanner.nextInt(),scanner.nextDouble()); //make this access a specific user using scanner
 						if(withdrawStatus!= false ) //you will need getters and other methods from the bank to make this access a specific account
-							System.out.println("Withdrawn"); //ask your roommates for help, dont be shy!
+							System.out.println("Withdrawn"); //ask your room mates for help, dont be shy!
 						else
 							System.out.println("Fails to withdraw");
 					}
@@ -88,7 +88,7 @@ public class RunBank {
 					System.out.println("Balance : " +balance);
 				
 				break;
-			case 5: 
+			case 5: // make check to make sure person is admin, by user name
 				System.out.println("Admin login");
 				Admin a = new Admin();
 				a.adminMenu(); //added type cast to int/switched accounts to accountNumbers??
@@ -103,12 +103,13 @@ public class RunBank {
 	
 		// TODO Auto-generated method stub
 		public void createAccount() {
-			System.out.println("Make a new account please \n");
+			System.out.println("Make a select account type please \n");
+			String type = scanner.next();
 			System.out.println("Please type in your Username");
 			String name = scanner.next();
 			scanner.nextLine();
 			System.out.println("Type in social security number");
-			int ssn = scanner.nextInt();
+			int ssn = scanner.nextInt();//add a regex
 			scanner.nextLine();
 			System.out.println("Please type in password");
 			String password=scanner.next();
@@ -152,7 +153,7 @@ public class RunBank {
 		//	Bank.getBank().getspecificCustomer().getAccount().setBalance(); for deposit and wthdraw
 		//Bank.getBank().addLu();   going to add to the array of locked users, serilialized.
 			// checking to make sure all information is correct. Validation checks.
-				
+			theMenu(); //resets menu	
 			}
 			 else
 				System.out.println("User not added");
@@ -160,13 +161,16 @@ public class RunBank {
 				
 		}
 		public boolean ssnCheck(int ssn) {
+			
 			for(Customer c: Bank.getCustomers1()) {
+				System.out.println(c.getSsn()+ " "+ ssn );
 				if(c.getSsn() == ssn) {
+					
 					System.out.println("Give me unique social security number");
-					return true;
+					return false;
 				}
 			}
-			return false;
+			return true;
 			
 			
 		}

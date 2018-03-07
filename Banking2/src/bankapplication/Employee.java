@@ -76,15 +76,19 @@ public class Employee extends Customer implements Serializable {
 	public void setType(String type) {
 		this.type = type;
 	}
+	
 
 
 	public Employee(String name, String password, int ssn) {
-		super();
+		this.account= new Account();
 		this.name = name;
 		this.password = password;
 		this.ssn = ssn;
-		this.type = "employee";
 	}
+	
+	
+	
+	
 	protected boolean approvedAccount(Account account ){
 		System.out.println("Enter the account number of the user you want to approve");
 		int decision = scanner.nextInt();

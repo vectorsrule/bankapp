@@ -14,6 +14,14 @@ import bankapplication.RunBank;
 public class Admin extends Customer implements Serializable{
 	
 	private Account account; //customer can have an account
+	public Account getAccount() {
+		return account;
+	}
+
+	public void setAccount(Account account) {
+		this.account = account;
+	}
+
 	private String name;
 	private String password; // last name CHANGE IT
 	private int ssn;
@@ -26,14 +34,14 @@ public class Admin extends Customer implements Serializable{
 	}
 
 	public Admin(String name, String password, int ssn, String status) {
-		super();
+		this.account= new Account();
 		this.name = name;
 		this.password = password;
 		this.ssn = ssn;
-		this.status = status;
+		this.status = "admin";
 	}
 
-
+	
 	public String getName() {
 		return name;
 	}
@@ -162,8 +170,15 @@ public class Admin extends Customer implements Serializable{
 	
 	public void adminMenu(){
 		
+		for(LockedUser lu: Bank.getLu()) {
+			System.out.println(lu);
+			System.out.println(lu.getName()+"\n"+lu.getPassword()+"\n"+lu.getSsn()+"\n"+lu.getAccount().getAccountNumber()+"\n"+lu.getAccount().getBalance());
+			//gets locked user
+		}
+		
 		for(Customer c: Bank.getCustomers1()) {
-			System.out.println(c.getName()+"\n"+c.getPassword()+"\n"+c.getSsn());
+			System.out.println(c);
+			System.out.println(c.getName()+"\n"+c.getPassword()+"\n"+c.getSsn()+"\n"+c.getAccount().getAccountNumber()+"\n"+c.getAccount().getBalance());
 			//gets access to everything in customers
 			
 		}
@@ -184,15 +199,21 @@ public class Admin extends Customer implements Serializable{
 		
 		case 2: 
 			for(Customer c: Bank.getCustomers1()) {
+				if(c.getAccount().getAccountNumber()== aN) {
 				System.out.print(c.getAccount().getAccountNumber()+"\n"+c.getAccount().getBalance());
+				}
+				
 			}
+			adminMenu();
 			break;
 			
 		case 3: 
 			lockingAccount( Bank.getCuz(aN).getAccount().getAccountNumber());
 			break;
 		case 4:
-			RunBank.main(null);
+			RunBank rb = new RunBank();
+			rb.theMenu();
+			break;
 			
 		}
 		
