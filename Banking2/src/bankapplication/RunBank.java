@@ -104,7 +104,7 @@ public class RunBank {
 		// TODO Auto-generated method stub
 		public void createAccount() {
 			System.out.println("Make a new account please \n");
-			System.out.println("Please type in your UsernameName");
+			System.out.println("Please type in your Username");
 			String name = scanner.next();
 			scanner.nextLine();
 			System.out.println("Type in social security number");
