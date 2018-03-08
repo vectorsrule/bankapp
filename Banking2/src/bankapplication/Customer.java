@@ -67,9 +67,7 @@ public class Customer implements Serializable {
 					
 					Bank.getCustomers1().get(i).getAccount().setBalance(Bank.getCustomers1().get(i).getAccount().getBalance() +amount);//adds deposit to current amount in account
 					status = true;
-				//	return 
-					 //successful deposit
-//					Bank.getBank().getspecificCustomer().getAccount().setBalance();
+			
 				}
 						
 		}

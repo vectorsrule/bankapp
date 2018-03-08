@@ -51,30 +51,45 @@ public class RunBank {
 //				
 				break;
 			case 2:
-				System.out.println("Enter account number than  the amount in next line:");
-				int choice = scanner.nextInt();
+				System.out.println("Enter the amount to deposit in next line:");
+				int accountNum1 = scanner.nextInt();
+				double amount = scanner.nextDouble();
 				for (int o = 0; o < Bank.getCustomers1().size(); o++) {
-					if (Bank.getCustomers1().get(o).getAccount().getAccountNumber() == choice) {
-						Bank.getCustomers1().get(o);
-						boolean depositStatus = Customer.deposit(scanner.nextInt(),scanner.nextDouble()); //make this access a specific user using scanner
-						if(depositStatus!= false ) //you will need getters and other methods from the bank to make this access a specific account
-							System.out.println("Deposited"); //ask your roommates for help, dont be shy!
-						else
-							System.out.println("Fails to deposit");
+					if (Bank.getCustomers1().get(o).getAccount().getAccountNumber() == accountNum1) {
+						boolean depositStatus = Customer.deposit(accountNum1,amount); //make this access a specific user using scanner
+						if(depositStatus == true ) { //you will need getters and other methods from the bank to make this access a specific account
+							System.out.println("Deposited");
+							RunBank rb = new RunBank();
+							rb.theMenu();
+						}//ask your roommates for help, dont be shy!
+						else {
+						System.out.println("Fails to deposit");
+						RunBank rb = new RunBank();
+						rb.theMenu();
+						}
+						//pass another user from admin, and do deposit TODAYYYYY
 					}
 				}
 				break;
 			case 3: 
-				System.out.println("Enter account number than  the amount in next line:");
-				int choice2 = scanner.nextInt();
+				System.out.println("Enter amount to withdraw in next line:");
+				int accountNum2 = scanner.nextInt();
+				double amount2 = scanner.nextDouble();
 				for (int o = 0; o < Bank.getCustomers1().size(); o++) {
-					if (Bank.getCustomers1().get(o).getAccount().getAccountNumber() == choice2) {
+					if (Bank.getCustomers1().get(o).getAccount().getAccountNumber() == accountNum2) {
 						Bank.getCustomers1().get(o);
-						boolean withdrawStatus = Customer.deposit(scanner.nextInt(),scanner.nextDouble()); //make this access a specific user using scanner
-						if(withdrawStatus!= false ) //you will need getters and other methods from the bank to make this access a specific account
-							System.out.println("Withdrawn"); //ask your room mates for help, dont be shy!
-						else
-							System.out.println("Fails to withdraw");
+						boolean withdrawStatus = Customer.deposit(accountNum2,amount2); //make this access a specific user using scanner
+						if(withdrawStatus== true ){ //you will need getters and other methods from the bank to make this access a specific account
+							System.out.println("Withdrawn");
+							RunBank rb = new RunBank();
+							rb.theMenu();
+						}//ask your roommates for help, dont be shy! //you will need getters and other methods from the bank to make this access a specific account
+						else {
+						System.out.println("Fails to withdraw");
+						RunBank rb = new RunBank();
+						rb.theMenu();
+						}
+						
 					}
 				}
 				break;
@@ -82,7 +97,7 @@ public class RunBank {
 				System.out.println("Enter account number:");
 				int accountNum = scanner.nextInt();
 				double balance = Bank.getCuz(accountNum).getAccount().getBalance();
-				if(balance == -1 )
+				if(balance <= 0 )
 					System.out.println("Account Number Not Found");
 				else
 					System.out.println("Balance : " +balance);
