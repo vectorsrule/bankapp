@@ -78,7 +78,7 @@ public class RunBank {
 				for (int o = 0; o < Bank.getCustomers1().size(); o++) {
 					if (Bank.getCustomers1().get(o).getAccount().getAccountNumber() == accountNum2) {
 						Bank.getCustomers1().get(o);
-						boolean withdrawStatus = Customer.deposit(accountNum2,amount2); //make this access a specific user using scanner
+						boolean withdrawStatus = Customer.withdraw(accountNum2,amount2); //make this access a specific user using scanner
 						if(withdrawStatus== true ){ //you will need getters and other methods from the bank to make this access a specific account
 							System.out.println("Withdrawn");
 							RunBank rb = new RunBank();

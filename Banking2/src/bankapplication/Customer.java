@@ -96,20 +96,20 @@ public class Customer implements Serializable {
 					   //status 1 -->deposited
 	}
 	public static boolean withdraw(int accountNumber, double amount) {
-		boolean status=false;
-		if(amount> 0 && amount <10000) { // if amount is greater than zero than only you can perform withdraw, cannot withdraw more than 10,000$ at a time
+		boolean status2=false;
+		if(amount> 0 ) { // if amount is greater than zero than only you can perform withdraw, cannot withdraw more than 10,000$ at a time
 		for(int i = 0;i < Bank.getCustomers1().size() ;i++) { //for loop to search if the account number is valid.
 				if(Bank.getCustomers1().get(i).getAccount().getAccountNumber()==accountNumber) {//searching the counter for only existing accounts
 					
-					Bank.getCustomers1().get(i).getAccount().setBalance(Bank.getCustomers1().get(i).getAccount().getBalance() -amount);//adds deposit to current amount in account
-					status = true;
+					Bank.getCustomers1().get(i).getAccount().setBalance(Bank.getCustomers1().get(i).getAccount().getBalance() -amount);//should subtract withdraw amt
+					status2 = true;
 				
 				}
 						
 		}
 		}
-		return status;//status = 0 -->invalid amount or invalid account number
-					   //status 1 -->deposited
+		return status2;//status = 0 -->invalid amount or invalid account number
+					   //status 1 -->withdrawn
 		
 		
 	}
