@@ -51,7 +51,7 @@ public class RunBank {
 //				
 				break;
 			case 2:
-				System.out.println("Enter the amount to deposit in next line:");
+				System.out.println("Enter the account number than amount to deposit in next line:");
 				int accountNum1 = scanner.nextInt();
 				double amount = scanner.nextDouble();
 				for (int o = 0; o < Bank.getCustomers1().size(); o++) {
@@ -72,7 +72,7 @@ public class RunBank {
 				}
 				break;
 			case 3: 
-				System.out.println("Enter amount to withdraw in next line:");
+				System.out.println("Enter account number than amount to withdraw in next line:");
 				int accountNum2 = scanner.nextInt();
 				double amount2 = scanner.nextDouble();
 				for (int o = 0; o < Bank.getCustomers1().size(); o++) {
@@ -96,7 +96,7 @@ public class RunBank {
 			case 4: 
 				System.out.println("Enter account number:");
 				int accountNum = scanner.nextInt();
-				double balance = Bank.getCuz(accountNum).getAccount().getBalance();
+				double balance = Bank.getCuz(accountNum).getAccount().getBalance(); //JAVA NULL POINTER HERE
 				if(balance <= 0 )
 					System.out.println("Account Number Not Found");
 				else
@@ -128,6 +128,7 @@ public class RunBank {
 			scanner.nextLine();
 			System.out.println("Please type in password");
 			String password=scanner.next();
+			Account ac = new Account();
 			
 			
 			if(ssnCheck(ssn)) {

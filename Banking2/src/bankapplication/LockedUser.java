@@ -13,6 +13,7 @@ public class LockedUser extends Customer implements Serializable {
 	private String password; // last name CHANGE IT
 	private int ssn;   //fields
 	private String type;
+	private int accountNumber;
 	
 	
 	
@@ -29,8 +30,7 @@ public class LockedUser extends Customer implements Serializable {
 	public void setAccount(Account account) {
 		this.account = account;
 	}
-
-
+	
 	public String getName() {
 		return name;
 	}
@@ -73,14 +73,21 @@ public class LockedUser extends Customer implements Serializable {
 
 	public LockedUser(String name, String password, int ssn) {
 		super();
+		this.account = new Account();
 		this.name = name;
 		this.password = password;
 		this.ssn = ssn;
 		this.type = "locked";
 	}
-	
-	
-	
-	
 
+
+	public int getAccountNumber() {
+		return accountNumber;
+	}
+
+
+	public void setAccountNumber(int accountNumber) {
+		this.accountNumber = accountNumber;
+	}
+	
 }

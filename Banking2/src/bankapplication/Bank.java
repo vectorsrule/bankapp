@@ -22,6 +22,7 @@ public class Bank {
 		customers1.add(custy);
 		a1.add(admin);
 		empl.add(employ);
+		
 	}
 	
 	public static Bank startBank() {
@@ -44,7 +45,7 @@ public class Bank {
 		lu.add(x);
 	}
 	public static LockedUser getUnapproved(int accountNum) {
-		
+		System.out.println(lu.size());
 		for(LockedUser lock: lu) {
 			if(lock.getAccount().getAccountNumber()==accountNum) {
 				return lock;
@@ -56,8 +57,9 @@ public class Bank {
 		
 	}
 public static Customer getCuz(int accountNum) {
-		
+	System.out.println("Hello");//not reached yet
 		for(Customer c: customers1) {
+			
 			if(c.getAccount().getAccountNumber()==accountNum) {
 				return c;
 				
@@ -87,21 +89,21 @@ public static Customer getCuz(int accountNum) {
 		return empl;
 	}
 
-	public static Account[] getAccounts() {
-		return accounts;
-	}
+	//public static Account[] getAccounts() {
+		//return accounts;
+	//}
 
 	public int getCustomerCounter() {
 		return customerCounter;
 	}
 	public void addCustomer(Customer C ) {
-		customers1.add(C); //second picture needs to look like
+		customers1.add(C); 
 		
 	}
 
-	private static Customer customers[] = new Customer[30];
-	private static Account accounts[] = new Account[30]; 
-	Admin a = new Admin("Admin", "aPassword", 5, "Admin");
+	//private static Customer customers[] = new Customer[30];
+	//private static Account accounts[] = new Account[30]; 
+	//Admin a = new Admin("Admin", "aPassword", 5, "Admin");
 	
 
 	 // keep track of customer with acct
@@ -109,7 +111,7 @@ public static Customer getCuz(int accountNum) {
 		
 	public Customer getCustomer(double accountNumber) {
 		
-		for(Customer C : customers) {
+		for(Customer C : customers1) {
 			if(C.getAccount().getAccountNumber()== accountNumber) {
 				return C;	
 			}

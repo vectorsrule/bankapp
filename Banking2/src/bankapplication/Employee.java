@@ -80,6 +80,7 @@ public class Employee extends Customer implements Serializable {
 
 
 	public Employee(String name, String password, int ssn) {
+		super();
 		this.account= new Account();
 		this.name = name;
 		this.password = password;
@@ -150,6 +151,7 @@ public class Employee extends Customer implements Serializable {
 					
 					oos.writeObject(lu);
 					System.out.println("Done");
+					employeeMenu();
 					System.out.println(lu);
 					
 				} catch (FileNotFoundException e) {
@@ -184,7 +186,7 @@ public class Employee extends Customer implements Serializable {
 		return check;
 	}
 	
-	public void adminMenu(){
+	public void employeeMenu(){
 		
 		for(Customer c: Bank.getCustomers1()) {
 			System.out.println(c.getName()+"\n"+c.getPassword()+"\n"+c.getSsn());

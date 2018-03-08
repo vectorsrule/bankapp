@@ -1,14 +1,20 @@
 package bankapplication;
 
+import java.io.Serializable;
 import java.util.Random;
 
-public class Account {
+public class Account implements Serializable {
 
-	//long represents integers group and memory and memory size is 8 bytes
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -9090943915859253842L;
+//long represents integers group and memory and memory size is 8 bytes
 private int accountNumber;
 private double balance;
 static private int accountNumberGenerator = 1000;  //since static it'll produce new value everytime account is created
 transient Random r = new Random();
+
 //instance members are created every time object is made, gets initialized back to 1000, and reincrements gives 1001
 //static members are generated only once, although you create n objects, meaning they wont get initialized back to 1000, so on every increment they produce a new value
 
@@ -20,6 +26,11 @@ public Account() {
 	this.balance = 0;
 	
 }
+public int generatorNum(){
+	//accountNumber = accountNumberGenerator + ( r.nextInt(1000) + 1);
+	return accountNumberGenerator + ( r.nextInt(1000) + 1);
+	
+}
 
 
 public Account(double balance) { // they enter a balance at the beginning and that is their
@@ -28,7 +39,7 @@ public Account(double balance) { // they enter a balance at the beginning and th
 }
 
 
-public int getAccountNumber() { //NULL FOR SOME REASON
+public int getAccountNumber() { //NULL FOR SOME REASON(fixed, not anymore)
 	return accountNumber;
 }
 

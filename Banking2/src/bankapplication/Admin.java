@@ -13,15 +13,8 @@ import bankapplication.RunBank;
 
 public class Admin extends Customer implements Serializable{
 	
+	private static final long serialVersionUID = 4178314932166633275L;
 	private Account account; //customer can have an account
-	public Account getAccount() {
-		return account;
-	}
-
-	public void setAccount(Account account) {
-		this.account = account;
-	}
-
 	private String name;
 	private String password; // last name CHANGE IT
 	private int ssn;
@@ -39,6 +32,14 @@ public class Admin extends Customer implements Serializable{
 		this.password = password;
 		this.ssn = ssn;
 		this.status = "admin";
+	}
+	
+	public Account getAccount() {
+		return account;
+	}
+
+	public void setAccount(Account account) {
+		this.account = account;
 	}
 
 	
@@ -74,7 +75,7 @@ public class Admin extends Customer implements Serializable{
 		this.status = status;
 	}
 	protected boolean approvedAccount(Account account ){
-		System.out.println("Enter the account number of the user you want to approve");
+		System.out.println("Please confirm the account number for approval");
 		int decision = scanner.nextInt();
 		boolean check = false;
 		for(int i = 0; i < Bank.getLu().size(); i++) {
@@ -86,6 +87,7 @@ public class Admin extends Customer implements Serializable{
 					
 					oos.writeObject(c);
 					System.out.println("Done");
+					adminMenu();
 					System.out.println(c);
 					
 				} catch (FileNotFoundException e) {
@@ -96,7 +98,7 @@ public class Admin extends Customer implements Serializable{
 					e.printStackTrace();
 				}
 				
-				try(ObjectInputStream ois = new ObjectInputStream(new FileInputStream("notLockedUser.dat"))){
+				try(ObjectInputStream ois = new ObjectInputStream(new FileInputStream("lockedUsers.dat"))){
 					
 					Customer notLocked = (Customer) ois.readObject();
 					
@@ -130,10 +132,11 @@ public class Admin extends Customer implements Serializable{
 				LockedUser lu = new LockedUser(Bank.getCustomers1().get(i).getName(), Bank.getCustomers1().get(i).getPassword(),Bank.getCustomers1().get(i).getSsn());
 //						( String name, String password, int ssn)
 				Bank.getLu().add(lu);
-				try(ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("notLockedUsers.dat"))){
+				try(ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("lockedUsers.dat"))){
 					
 					oos.writeObject(lu);
 					System.out.println("Done");
+					adminMenu();
 					System.out.println(lu);
 					
 				} catch (FileNotFoundException e) {
@@ -171,15 +174,19 @@ public class Admin extends Customer implements Serializable{
 	public void adminMenu(){
 		
 		for(LockedUser lu: Bank.getLu()) {
+			if(lu != null) {
 			System.out.println(lu);
 			System.out.println(lu.getName()+"\n"+lu.getPassword()+"\n"+lu.getSsn()+"\n"+lu.getAccount().getAccountNumber()+"\n"+lu.getAccount().getBalance());
 			//gets locked user
+			}
 		}
 		
 		for(Customer c: Bank.getCustomers1()) {
+			if(c != null) {
 			System.out.println(c);
 			System.out.println(c.getName()+"\n"+c.getPassword()+"\n"+c.getSsn()+"\n"+c.getAccount().getAccountNumber()+"\n"+c.getAccount().getBalance());
 			//gets access to everything in customers
+			}
 			
 		}
 		System.out.println("1. Approve: ");
@@ -216,12 +223,7 @@ public class Admin extends Customer implements Serializable{
 			break;
 			
 		}
-		
-		//disply admin stuff
-		
+			
 	}
-	
-	
-	
-	
+		
 }
