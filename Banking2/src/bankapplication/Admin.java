@@ -8,6 +8,8 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.Scanner;
+
+import LoggingUtil.LoggingUtil;
 import bankapplication.RunBank;
 
 
@@ -32,6 +34,7 @@ public class Admin extends Customer implements Serializable{
 		this.password = password;
 		this.ssn = ssn;
 		this.status = "admin";
+		LoggingUtil.logInfo(" set admin ");
 	}
 	
 	public Account getAccount() {
@@ -40,6 +43,7 @@ public class Admin extends Customer implements Serializable{
 
 	public void setAccount(Account account) {
 		this.account = account;
+		LoggingUtil.logInfo(" set account ");
 	}
 
 	
@@ -49,6 +53,7 @@ public class Admin extends Customer implements Serializable{
 
 	public void setName(String name) {
 		this.name = name;
+		LoggingUtil.logInfo("name set ");
 	}
 
 	public String getPassword() {
@@ -57,14 +62,17 @@ public class Admin extends Customer implements Serializable{
 
 	public void setPassword(String password) {
 		this.password = password;
+		LoggingUtil.logInfo(" name set ");
 	}
 
 	public int getSsn() {
 		return ssn;
+		
 	}
 
 	public void setSsn(int ssn) {
 		this.ssn = ssn;
+		LoggingUtil.logInfo(" ssn set ");
 	}
 
 	public String getStatus() {
@@ -73,6 +81,7 @@ public class Admin extends Customer implements Serializable{
 
 	public void setStatus(String status) {
 		this.status = status;
+		LoggingUtil.logInfo(" status active ");
 	}
 	protected boolean approvedAccount(Account account ){
 		System.out.println("Please confirm the account number for approval");
@@ -81,13 +90,14 @@ public class Admin extends Customer implements Serializable{
 		for(int i = 0; i < Bank.getLu().size(); i++) {
 			if(Bank.getLu().get(i).getAccount().getAccountNumber() == decision) {
 				Customer c = new Customer(Bank.getLu().get(i).getName(), Bank.getLu().get(i).getPassword(),Bank.getLu().get(i).getSsn());
-//						( String name, String password, int ssn)
 				Bank.getCustomers1().add(c);
 				try(ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("notLockedUsers.dat"))){
 					
 					oos.writeObject(c);
+					LoggingUtil.logInfo(" Serialized ");
 					System.out.println("Done");
 					adminMenu();
+					LoggingUtil.logInfo(" Reset Menu ");
 					System.out.println(c);
 					
 				} catch (FileNotFoundException e) {
@@ -103,6 +113,7 @@ public class Admin extends Customer implements Serializable{
 					Customer notLocked = (Customer) ois.readObject();
 					
 					System.out.println("Found: " + notLocked );
+					LoggingUtil.logInfo(" Locked ");
 					
 				} catch (FileNotFoundException e) {
 					// TODO Auto-generated catch block
@@ -126,11 +137,10 @@ public class Admin extends Customer implements Serializable{
 		System.out.println("Enter the account number of the user you want to lock-in");
 		String decision = scanner.nextLine();
 		boolean check = false;
-		//RunBank rb = new RunBank();
+		
 		for(int i = 0; i < Bank.getCustomers1().size(); i++) {
 			if(Bank.getCustomers1().get(i).getAccount().getAccountNumber() == accountNumber) {
 				LockedUser lu = new LockedUser(Bank.getCustomers1().get(i).getName(), Bank.getCustomers1().get(i).getPassword(),Bank.getCustomers1().get(i).getSsn());
-//						( String name, String password, int ssn)
 				Bank.getLu().add(lu);
 				try(ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("lockedUsers.dat"))){
 					
@@ -178,6 +188,7 @@ public class Admin extends Customer implements Serializable{
 			System.out.println(lu);
 			System.out.println(lu.getName()+"\n"+lu.getPassword()+"\n"+lu.getSsn()+"\n"+lu.getAccount().getAccountNumber()+"\n"+lu.getAccount().getBalance());
 			//gets locked user
+			LoggingUtil.logInfo(" Got locked user ");
 			}
 		}
 		
@@ -186,6 +197,7 @@ public class Admin extends Customer implements Serializable{
 			System.out.println(c);
 			System.out.println(c.getName()+"\n"+c.getPassword()+"\n"+c.getSsn()+"\n"+c.getAccount().getAccountNumber()+"\n"+c.getAccount().getBalance());
 			//gets access to everything in customers
+			LoggingUtil.logInfo(" Access granted ");
 			}
 			
 		}
@@ -202,6 +214,7 @@ public class Admin extends Customer implements Serializable{
 		switch(choice) {
 		
 		case 1 : approvedAccount(Bank.getUnapproved(aN).getAccount());
+		LoggingUtil.logInfo(" approved ");
 		break;
 		
 		case 2: 

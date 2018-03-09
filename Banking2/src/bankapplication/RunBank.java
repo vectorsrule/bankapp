@@ -7,6 +7,8 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.Scanner;
+
+import LoggingUtil.LoggingUtil;
 import bankapplication.Admin;
 
 public class RunBank {
@@ -20,7 +22,7 @@ public class RunBank {
 	Scanner scanner = new Scanner(System.in);
 	
 
-//	@SuppressWarnings("resource")
+
 	public static void main(String[] args) {
 		RunBank rb = new RunBank();
 		Bank.startBank();
@@ -32,7 +34,9 @@ public class RunBank {
 			System.out.println("5. Admin Login");
 			System.out.println("6. Employee Login");
 			System.out.println("7. exit");
+			LoggingUtil.logInfo(" Choice Selected ");
 			rb.theMenu();
+			LoggingUtil.logInfo(" Menu Reset ");
 	}
 	public void theMenu( ) {
 			System.out.println("Enter Option : ");
@@ -42,13 +46,7 @@ public class RunBank {
 			
 			case 1: 
 				createAccount(); 
-			//	System.out.println("Enter amount to open account:");
-//				double accountNumber =b.openAccount(scanner.nextDouble());
-//				if(accountNumber!=0)
-//					System.out.println("Here is you account number: " +accountNumber);
-//				else
-//					System.out.println("Fail to create account for user");
-//				
+				LoggingUtil.logInfo(" Account Created ");
 				break;
 			case 2:
 				System.out.println("Enter the account number than amount to deposit in next line:");
@@ -61,13 +59,15 @@ public class RunBank {
 							System.out.println("Deposited");
 							RunBank rb = new RunBank();
 							rb.theMenu();
-						}//ask your roommates for help, dont be shy!
+							LoggingUtil.logInfo(" Reset Menu ");
+						}
 						else {
 						System.out.println("Fails to deposit");
 						RunBank rb = new RunBank();
 						rb.theMenu();
+						LoggingUtil.logInfo(" Reset Menu ");
 						}
-						//pass another user from admin, and do deposit TODAYYYYY
+						
 					}
 				}
 				break;
@@ -83,11 +83,13 @@ public class RunBank {
 							System.out.println("Withdrawn");
 							RunBank rb = new RunBank();
 							rb.theMenu();
-						}//ask your roommates for help, dont be shy! //you will need getters and other methods from the bank to make this access a specific account
+							LoggingUtil.logInfo(" Reset Menu ");
+						}
 						else {
 						System.out.println("Fails to withdraw");
 						RunBank rb = new RunBank();
 						rb.theMenu();
+						LoggingUtil.logInfo(" Reset Menu ");
 						}
 						
 					}
@@ -103,12 +105,14 @@ public class RunBank {
 					System.out.println("Balance : " +balance);
 				
 				break;
-			case 5: // make check to make sure person is admin, by user name
+			case 5: 
 				System.out.println("Admin login");
 				Admin a = new Admin();
+				LoggingUtil.logInfo(" Admin Accessed ");
 				a.adminMenu(); //added type cast to int/switched accounts to accountNumbers??
 				break;
 			case 6: System.exit(0);
+			LoggingUtil.logInfo(" System Reset ");
 				
 			default: System.out.println("Invalid Option !!");
 			}

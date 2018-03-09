@@ -2,6 +2,8 @@ package bankapplication;
 
 import java.io.Serializable;
 
+import LoggingUtil.LoggingUtil;
+
 public class Customer implements Serializable {
 	
 	/**
@@ -19,6 +21,7 @@ public class Customer implements Serializable {
 
 	public void setType(String type) {
 		this.type = type;
+		LoggingUtil.logInfo(" Set typed ");
 	}
 
 
@@ -32,19 +35,20 @@ public class Customer implements Serializable {
 		this.name = "";
 		this.password = "";
 		this.ssn = 0;
-		this.type = "regular"; //locked
+		this.type = "regular"; 
+		LoggingUtil.logInfo(" Regular ");
 		
 	} 
 	
 	
 
 	public Customer(String name, String password, int ssn) {
-		//super();
 		this.account = new Account();//is empty rn
 		this.name = name;
 		this.password = password;
 		this.ssn = ssn;
 		this.type="regular";
+		LoggingUtil.logInfo(" Regular ");
 	}
 
 
@@ -62,6 +66,7 @@ public class Customer implements Serializable {
 
 	public void setPassword(String password) {
 		this.password = password;
+		LoggingUtil.logInfo(" Password Set ");
 	}
 
 	public int getSsn() {
@@ -77,6 +82,7 @@ public class Customer implements Serializable {
 	}
 	public void setAccount(Account account) {
 		this.account = account;
+		LoggingUtil.logInfo(" Account Selected ");
 	}
 	
 	public static boolean deposit(int accountNumber, double amount) { //deposit feature that points at account number along with how much you'd like to deposit
@@ -87,7 +93,7 @@ public class Customer implements Serializable {
 					
 					Bank.getCustomers1().get(i).getAccount().setBalance(Bank.getCustomers1().get(i).getAccount().getBalance() +amount);//adds deposit to current amount in account
 					status = true;
-			
+					LoggingUtil.logInfo(" Deposit Good ");
 				}
 						
 		}
@@ -103,6 +109,7 @@ public class Customer implements Serializable {
 					
 					Bank.getCustomers1().get(i).getAccount().setBalance(Bank.getCustomers1().get(i).getAccount().getBalance() -amount);//should subtract withdraw amt
 					status2 = true;
+					LoggingUtil.logInfo(" Withdraw good ");
 				
 				}
 						
@@ -124,6 +131,7 @@ public class Customer implements Serializable {
 
 	public void setAccountNumber(int accountNumber) {
 		this.accountNumber = accountNumber;
+		LoggingUtil.logInfo(" account number set");
 	}
 
 }

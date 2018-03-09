@@ -2,6 +2,8 @@ package bankapplication;
 
 import java.util.ArrayList;
 
+import LoggingUtil.LoggingUtil;
+
 //import BankApp.Account;
 
 public class Bank {
@@ -22,6 +24,7 @@ public class Bank {
 		customers1.add(custy);
 		a1.add(admin);
 		empl.add(employ);
+		LoggingUtil.logInfo(" Added ");
 		
 	}
 	
@@ -50,6 +53,7 @@ public class Bank {
 			if(lock.getAccount().getAccountNumber()==accountNum) {
 				return lock;
 				
+				
 			}
 			
 		}
@@ -62,6 +66,7 @@ public static Customer getCuz(int accountNum) {
 			
 			if(c.getAccount().getAccountNumber()==accountNum) {
 				return c;
+				
 				
 			}
 			
@@ -89,9 +94,7 @@ public static Customer getCuz(int accountNum) {
 		return empl;
 	}
 
-	//public static Account[] getAccounts() {
-		//return accounts;
-	//}
+
 
 	public int getCustomerCounter() {
 		return customerCounter;
@@ -101,13 +104,7 @@ public static Customer getCuz(int accountNum) {
 		
 	}
 
-	//private static Customer customers[] = new Customer[30];
-	//private static Account accounts[] = new Account[30]; 
-	//Admin a = new Admin("Admin", "aPassword", 5, "Admin");
-	
 
-	 // keep track of customer with acct
-	//open account
 		
 	public Customer getCustomer(double accountNumber) {
 		

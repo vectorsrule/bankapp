@@ -9,6 +9,8 @@ import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.Scanner;
 
+import LoggingUtil.LoggingUtil;
+
 public class Employee extends Customer implements Serializable {
 	/**
 	 * 
@@ -35,6 +37,7 @@ public class Employee extends Customer implements Serializable {
 
 	public void setAccount(Account account) {
 		this.account = account;
+		LoggingUtil.logInfo(" Account Stored ");
 	}
 
 
@@ -45,6 +48,7 @@ public class Employee extends Customer implements Serializable {
 
 	public void setName(String name) {
 		this.name = name;
+		LoggingUtil.logInfo(" Name Set ");
 	}
 
 
@@ -97,10 +101,9 @@ public class Employee extends Customer implements Serializable {
 		for(int i = 0; i < Bank.getLu().size(); i++) {
 			if(Bank.getLu().get(i).getAccount().getAccountNumber() == decision) {
 				Customer c = new Customer(Bank.getLu().get(i).getName(), Bank.getLu().get(i).getPassword(),Bank.getLu().get(i).getSsn());
-//( String name, String password, int ssn)
 				Bank.getCustomers1().add(c);
 				try(ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("notLockedUsers.dat"))){
-					
+					LoggingUtil.logInfo(" Serialized/Approved ");
 					oos.writeObject(c);
 					System.out.println("Done");
 					System.out.println(c);
@@ -118,6 +121,7 @@ public class Employee extends Customer implements Serializable {
 					Customer notLocked = (Customer) ois.readObject();
 					
 					System.out.println("Found: " + notLocked );
+					LoggingUtil.logInfo(" User Found ");
 					
 				} catch (FileNotFoundException e) {
 					// TODO Auto-generated catch block
@@ -145,10 +149,10 @@ public class Employee extends Customer implements Serializable {
 		for(int i = 0; i < Bank.getCustomers1().size(); i++) {
 			if(Bank.getCustomers1().get(i).getAccount().getAccountNumber() == accountNumber) {
 				LockedUser lu = new LockedUser(Bank.getCustomers1().get(i).getName(), Bank.getCustomers1().get(i).getPassword(),Bank.getCustomers1().get(i).getSsn());
-//						( String name, String password, int ssn)
+				LoggingUtil.logInfo(" Locked User Got Account ");
 				Bank.getLu().add(lu);
 				try(ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("notLockedUsers.dat"))){
-					
+					LoggingUtil.logInfo(" Serialized Locked User ");	
 					oos.writeObject(lu);
 					System.out.println("Done");
 					employeeMenu();
@@ -167,6 +171,7 @@ public class Employee extends Customer implements Serializable {
 					Customer notLocked = (Customer) ois.readObject();
 					
 					System.out.println("Found: " + notLocked );
+					LoggingUtil.logInfo(" Found Locked");
 					
 				} catch (FileNotFoundException e) {
 					// TODO Auto-generated catch block
@@ -190,7 +195,7 @@ public class Employee extends Customer implements Serializable {
 		
 		for(Customer c: Bank.getCustomers1()) {
 			System.out.println(c.getName()+"\n"+c.getPassword()+"\n"+c.getSsn());
-			//gets access to everything in customers
+			LoggingUtil.logInfo(" Got Customers Stored ");
 			
 		}
 		System.out.println("1. Approve: ");
@@ -211,6 +216,7 @@ public class Employee extends Customer implements Serializable {
 		case 2: 
 			for(Customer c: Bank.getCustomers1()) {
 				System.out.print(c.getAccount().getAccountNumber()+"\n"+c.getAccount().getBalance());
+				LoggingUtil.logInfo(" Checked Account ");
 			}
 			break;
 			
@@ -219,6 +225,7 @@ public class Employee extends Customer implements Serializable {
 			break;
 		case 4:
 			RunBank.main(null);
+			LoggingUtil.logInfo(" Reset Menu ");
 			
 		}
 		

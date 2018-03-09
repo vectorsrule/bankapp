@@ -2,6 +2,8 @@ package bankapplication;
 
 import java.io.Serializable;
 
+import LoggingUtil.LoggingUtil;
+
 public class LockedUser extends Customer implements Serializable {
 	
 	/**
@@ -78,6 +80,7 @@ public class LockedUser extends Customer implements Serializable {
 		this.password = password;
 		this.ssn = ssn;
 		this.type = "locked";
+		LoggingUtil.logInfo(" User Locked ");
 	}
 
 
@@ -88,6 +91,7 @@ public class LockedUser extends Customer implements Serializable {
 
 	public void setAccountNumber(int accountNumber) {
 		this.accountNumber = accountNumber;
+		LoggingUtil.logInfo(" Set account ");
 	}
 	
 }

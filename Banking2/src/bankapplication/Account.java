@@ -3,6 +3,8 @@ package bankapplication;
 import java.io.Serializable;
 import java.util.Random;
 
+import LoggingUtil.LoggingUtil;
+
 public class Account implements Serializable {
 
 	/**
@@ -24,6 +26,7 @@ transient Random r = new Random();
 public Account() {
 	this.accountNumber = accountNumberGenerator + ( r.nextInt(1000) + 1);// will add account 1000+
 	this.balance = 0;
+	LoggingUtil.logInfo(" Good Account ");
 	
 }
 public int generatorNum(){
@@ -36,6 +39,7 @@ public int generatorNum(){
 public Account(double balance) { // they enter a balance at the beginning and that is their
 	this.balance = balance;
 	this.accountNumber = accountNumberGenerator + (r.nextInt(1000)+1);
+	LoggingUtil.logInfo(" Generated ");
 }
 
 
@@ -48,18 +52,9 @@ public double getBalance() {
 }
 public void setBalance(double balance) {
 	this.balance = balance;
+	LoggingUtil.logInfo(" Balance is set ");
 }
 
-//public double getBalance(double accountNumber) {
-//	for(int i = 0;i < Bank.getCustomers1().size();i++) { 
-//		if(accountNumber == customers[i].getAccount().getAccountNumber()) {
-//		
-//			return customers[i].getAccount().getBalance();
-//		}
-//		}
-//	System.out.println("No Account Found");
-//	return -1;
-//	
-//}
+
 
 }
