@@ -10,6 +10,7 @@ import bankapplication.Account;
 import bankapplication.Admin;
 import bankapplication.Bank;
 import bankapplication.Customer;
+import bankapplication.Employee;
 import bankapplication.LockedUser;
 import bankapplication.RunBank;
 
@@ -40,9 +41,6 @@ public class Banktests {
 		 assertEquals(a1.getName(),"Admin");
 	}
 	 
-	    
-		
-	
 	@Test
 	public void AccountTest(){
 		
@@ -50,11 +48,18 @@ public class Banktests {
 		
 		
 		
-		
-	}
+		}
 	@Test
 	public void LUTest() {
 		assertEquals(Bank.getA1(), 1);
+	}
+	
+	@Test
+	public void employTest() {
+		
+		ArrayList<Customer> Test3=Bank.getCustomers1();
+		Customer customers1=Test3.get(0);
+		assertEquals(customers1.getName(),"Customer");
 	}
 	
 

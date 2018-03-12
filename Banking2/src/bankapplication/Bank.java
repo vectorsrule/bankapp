@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import LoggingUtil.LoggingUtil;
 
-//import BankApp.Account;
+
 
 public class Bank {
 	public static Bank b;
@@ -31,6 +31,7 @@ public class Bank {
 	public static Bank startBank() {
 		if (b == null) {
 		    b = new Bank();
+		// this.acc = AccountDaoImpl.class
 		   
 		}
 		 return b;
@@ -61,7 +62,7 @@ public class Bank {
 		
 	}
 public static Customer getCuz(int accountNum) {
-	System.out.println("Hello");//not reached yet
+	System.out.println("Thanks");
 		for(Customer c: customers1) {
 			
 			if(c.getAccount().getAccountNumber()==accountNum) {

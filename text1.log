@@ -73,3 +73,204 @@
 2018-03-09 01:25:23 INFO  root:18 -  Regular 
 2018-03-09 01:25:23 INFO  root:18 -  Added 
 2018-03-09 01:25:23 INFO  root:18 -  Choice Selected 
+2018-03-09 09:11:45 INFO  root:18 -  Good Account 
+2018-03-09 09:11:45 INFO  root:18 -  Regular 
+2018-03-09 09:11:45 INFO  root:18 -  Good Account 
+2018-03-09 09:11:46 INFO  root:18 -  Good Account 
+2018-03-09 09:11:46 INFO  root:18 -  Regular 
+2018-03-09 09:11:46 INFO  root:18 -  Good Account 
+2018-03-09 09:11:46 INFO  root:18 -  set admin 
+2018-03-09 09:11:46 INFO  root:18 -  Good Account 
+2018-03-09 09:11:46 INFO  root:18 -  Regular 
+2018-03-09 09:11:46 INFO  root:18 -  Added 
+2018-03-09 09:11:46 INFO  root:18 -  Choice Selected 
+2018-03-09 09:12:22 INFO  root:18 -  Good Account 
+2018-03-09 09:12:22 INFO  root:18 -  Regular 
+2018-03-09 09:12:22 INFO  root:18 -  Good Account 
+2018-03-09 09:12:22 INFO  root:18 -  Good Account 
+2018-03-09 09:12:22 INFO  root:18 -  Regular 
+2018-03-09 09:12:22 INFO  root:18 -  Good Account 
+2018-03-09 09:12:22 INFO  root:18 -  set admin 
+2018-03-09 09:12:22 INFO  root:18 -  Good Account 
+2018-03-09 09:12:22 INFO  root:18 -  Regular 
+2018-03-09 09:12:22 INFO  root:18 -  Added 
+2018-03-09 09:12:22 INFO  root:18 -  Choice Selected 
+2018-03-09 09:12:58 INFO  root:18 -  Good Account 
+2018-03-09 09:12:58 INFO  root:18 -  Good Account 
+2018-03-09 09:12:58 INFO  root:18 -  Regular 
+2018-03-09 09:12:58 INFO  root:18 -  Good Account 
+2018-03-09 09:12:58 INFO  root:18 -  User Locked 
+2018-03-09 09:13:09 INFO  root:18 -  Good Account 
+2018-03-09 09:13:09 INFO  root:18 -  Regular 
+2018-03-09 09:13:09 INFO  root:18 -  Admin Accessed 
+2018-03-09 09:13:09 INFO  root:18 -  Got locked user 
+2018-03-09 09:13:09 INFO  root:18 -  Access granted 
+2018-03-09 09:13:09 INFO  root:18 -  Access granted 
+2018-03-09 09:13:09 INFO  root:18 -  Access granted 
+2018-03-09 09:13:34 INFO  root:18 -  Good Account 
+2018-03-09 09:13:34 INFO  root:18 -  Regular 
+2018-03-09 09:13:34 INFO  root:18 -  Serialized 
+2018-03-09 09:13:34 INFO  root:18 -  Got locked user 
+2018-03-09 09:13:34 INFO  root:18 -  Access granted 
+2018-03-09 09:13:34 INFO  root:18 -  Access granted 
+2018-03-09 09:13:34 INFO  root:18 -  Access granted 
+2018-03-09 09:13:34 INFO  root:18 -  Access granted 
+2018-03-09 09:14:08 INFO  root:18 -  Reset Menu 
+2018-03-09 09:14:08 INFO  root:18 -  Locked 
+2018-03-09 09:14:08 INFO  root:18 -  approved 
+2018-03-09 09:14:08 INFO  root:18 -  Account Created 
+2018-03-09 09:14:08 INFO  root:18 -  Menu Reset 
+2018-03-09 09:14:15 INFO  root:18 -  Good Account 
+2018-03-09 09:14:15 INFO  root:18 -  Regular 
+2018-03-09 09:14:15 INFO  root:18 -  Good Account 
+2018-03-09 09:14:15 INFO  root:18 -  Good Account 
+2018-03-09 09:14:15 INFO  root:18 -  Regular 
+2018-03-09 09:14:15 INFO  root:18 -  Good Account 
+2018-03-09 09:14:15 INFO  root:18 -  set admin 
+2018-03-09 09:14:15 INFO  root:18 -  Good Account 
+2018-03-09 09:14:15 INFO  root:18 -  Regular 
+2018-03-09 09:14:15 INFO  root:18 -  Added 
+2018-03-09 09:14:15 INFO  root:18 -  Choice Selected 
+2018-03-09 09:14:48 INFO  root:18 -  Good Account 
+2018-03-09 09:14:48 INFO  root:18 -  Good Account 
+2018-03-09 09:14:48 INFO  root:18 -  Regular 
+2018-03-09 09:14:48 INFO  root:18 -  Good Account 
+2018-03-09 09:14:48 INFO  root:18 -  User Locked 
+2018-03-09 09:14:51 INFO  root:18 -  Good Account 
+2018-03-09 09:14:51 INFO  root:18 -  Regular 
+2018-03-09 09:14:51 INFO  root:18 -  Admin Accessed 
+2018-03-09 09:14:51 INFO  root:18 -  Got locked user 
+2018-03-09 09:14:51 INFO  root:18 -  Access granted 
+2018-03-09 09:14:51 INFO  root:18 -  Access granted 
+2018-03-09 09:14:51 INFO  root:18 -  Access granted 
+2018-03-09 09:15:09 INFO  root:18 -  Good Account 
+2018-03-09 09:15:09 INFO  root:18 -  Regular 
+2018-03-09 09:15:09 INFO  root:18 -  Serialized 
+2018-03-09 09:15:09 INFO  root:18 -  Got locked user 
+2018-03-09 09:15:09 INFO  root:18 -  Access granted 
+2018-03-09 09:15:09 INFO  root:18 -  Access granted 
+2018-03-09 09:15:09 INFO  root:18 -  Access granted 
+2018-03-09 09:15:09 INFO  root:18 -  Access granted 
+2018-03-09 09:15:32 INFO  root:18 -  Balance is set 
+2018-03-09 09:15:32 INFO  root:18 -  Deposit Good 
+2018-03-09 09:16:20 INFO  root:18 -  Balance is set 
+2018-03-09 09:16:20 INFO  root:18 -  Withdraw good 
+2018-03-09 09:16:38 INFO  root:18 -  Reset Menu 
+2018-03-09 09:16:38 INFO  root:18 -  Reset Menu 
+2018-03-09 09:16:38 INFO  root:18 -  Reset Menu 
+2018-03-09 09:16:38 INFO  root:18 -  Locked 
+2018-03-09 09:16:38 INFO  root:18 -  approved 
+2018-03-09 09:16:38 INFO  root:18 -  Account Created 
+2018-03-09 09:16:38 INFO  root:18 -  Menu Reset 
+2018-03-09 09:43:15 INFO  root:18 -  Good Account 
+2018-03-09 09:43:15 INFO  root:18 -  Regular 
+2018-03-09 09:43:15 INFO  root:18 -  Good Account 
+2018-03-09 09:43:15 INFO  root:18 -  Good Account 
+2018-03-09 09:43:15 INFO  root:18 -  Regular 
+2018-03-09 09:43:15 INFO  root:18 -  Good Account 
+2018-03-09 09:43:15 INFO  root:18 -  set admin 
+2018-03-09 09:43:15 INFO  root:18 -  Good Account 
+2018-03-09 09:43:15 INFO  root:18 -  Regular 
+2018-03-09 09:43:15 INFO  root:18 -  Added 
+2018-03-09 09:43:15 INFO  root:18 -  Choice Selected 
+2018-03-09 09:59:41 INFO  root:18 -  Good Account 
+2018-03-09 09:59:41 INFO  root:18 -  Regular 
+2018-03-09 09:59:41 INFO  root:18 -  Good Account 
+2018-03-09 09:59:41 INFO  root:18 -  Good Account 
+2018-03-09 09:59:41 INFO  root:18 -  Regular 
+2018-03-09 09:59:41 INFO  root:18 -  Good Account 
+2018-03-09 09:59:41 INFO  root:18 -  set admin 
+2018-03-09 09:59:41 INFO  root:18 -  Good Account 
+2018-03-09 09:59:41 INFO  root:18 -  Regular 
+2018-03-09 09:59:41 INFO  root:18 -  Added 
+2018-03-09 09:59:41 INFO  root:18 -  Choice Selected 
+2018-03-09 10:00:32 INFO  root:18 -  Good Account 
+2018-03-09 10:00:32 INFO  root:18 -  Good Account 
+2018-03-09 10:00:32 INFO  root:18 -  Regular 
+2018-03-09 10:00:32 INFO  root:18 -  Good Account 
+2018-03-09 10:00:32 INFO  root:18 -  User Locked 
+2018-03-09 10:00:46 INFO  root:18 -  Good Account 
+2018-03-09 10:00:46 INFO  root:18 -  Regular 
+2018-03-09 10:00:46 INFO  root:18 -  Admin Accessed 
+2018-03-09 10:00:46 INFO  root:18 -  Got locked user 
+2018-03-09 10:00:46 INFO  root:18 -  Access granted 
+2018-03-09 10:00:46 INFO  root:18 -  Access granted 
+2018-03-09 10:00:46 INFO  root:18 -  Access granted 
+2018-03-09 10:01:41 INFO  root:18 -  Good Account 
+2018-03-09 10:01:41 INFO  root:18 -  Regular 
+2018-03-09 10:01:41 INFO  root:18 -  Serialized 
+2018-03-09 10:01:41 INFO  root:18 -  Got locked user 
+2018-03-09 10:01:41 INFO  root:18 -  Access granted 
+2018-03-09 10:01:41 INFO  root:18 -  Access granted 
+2018-03-09 10:01:41 INFO  root:18 -  Access granted 
+2018-03-09 10:01:41 INFO  root:18 -  Access granted 
+2018-03-09 10:02:23 INFO  root:18 -  Reset Menu 
+2018-03-09 10:02:23 INFO  root:18 -  Locked 
+2018-03-09 10:02:23 INFO  root:18 -  approved 
+2018-03-09 10:02:23 INFO  root:18 -  Account Created 
+2018-03-09 10:02:23 INFO  root:18 -  Menu Reset 
+2018-03-09 10:02:39 INFO  root:18 -  Good Account 
+2018-03-09 10:02:39 INFO  root:18 -  Regular 
+2018-03-09 10:02:39 INFO  root:18 -  Good Account 
+2018-03-09 10:02:39 INFO  root:18 -  Good Account 
+2018-03-09 10:02:39 INFO  root:18 -  Regular 
+2018-03-09 10:02:39 INFO  root:18 -  Good Account 
+2018-03-09 10:02:39 INFO  root:18 -  set admin 
+2018-03-09 10:02:39 INFO  root:18 -  Good Account 
+2018-03-09 10:02:39 INFO  root:18 -  Regular 
+2018-03-09 10:02:39 INFO  root:18 -  Added 
+2018-03-09 10:02:39 INFO  root:18 -  Choice Selected 
+2018-03-09 10:02:48 INFO  root:18 -  Menu Reset 
+2018-03-09 10:02:56 INFO  root:18 -  Good Account 
+2018-03-09 10:02:56 INFO  root:18 -  Regular 
+2018-03-09 10:02:56 INFO  root:18 -  Good Account 
+2018-03-09 10:02:56 INFO  root:18 -  Good Account 
+2018-03-09 10:02:56 INFO  root:18 -  Regular 
+2018-03-09 10:02:56 INFO  root:18 -  Good Account 
+2018-03-09 10:02:56 INFO  root:18 -  set admin 
+2018-03-09 10:02:56 INFO  root:18 -  Good Account 
+2018-03-09 10:02:56 INFO  root:18 -  Regular 
+2018-03-09 10:02:56 INFO  root:18 -  Added 
+2018-03-09 10:02:56 INFO  root:18 -  Choice Selected 
+2018-03-09 10:03:06 INFO  root:18 -  Good Account 
+2018-03-09 10:03:06 INFO  root:18 -  Good Account 
+2018-03-09 10:03:06 INFO  root:18 -  Regular 
+2018-03-09 10:03:06 INFO  root:18 -  Good Account 
+2018-03-09 10:03:06 INFO  root:18 -  User Locked 
+2018-03-09 10:03:09 INFO  root:18 -  Good Account 
+2018-03-09 10:03:09 INFO  root:18 -  Regular 
+2018-03-09 10:03:09 INFO  root:18 -  Admin Accessed 
+2018-03-09 10:03:09 INFO  root:18 -  Got locked user 
+2018-03-09 10:03:09 INFO  root:18 -  Access granted 
+2018-03-09 10:03:09 INFO  root:18 -  Access granted 
+2018-03-09 10:03:09 INFO  root:18 -  Access granted 
+2018-03-09 10:03:21 INFO  root:18 -  Good Account 
+2018-03-09 10:03:21 INFO  root:18 -  Regular 
+2018-03-09 10:03:21 INFO  root:18 -  Serialized 
+2018-03-09 10:03:21 INFO  root:18 -  Got locked user 
+2018-03-09 10:03:21 INFO  root:18 -  Access granted 
+2018-03-09 10:03:21 INFO  root:18 -  Access granted 
+2018-03-09 10:03:21 INFO  root:18 -  Access granted 
+2018-03-09 10:03:21 INFO  root:18 -  Access granted 
+2018-03-09 10:03:37 INFO  root:18 -  Balance is set 
+2018-03-09 10:03:37 INFO  root:18 -  Deposit Good 
+2018-03-09 10:03:53 INFO  root:18 -  Balance is set 
+2018-03-09 10:03:53 INFO  root:18 -  Withdraw good 
+2018-03-09 10:04:02 INFO  root:18 -  Reset Menu 
+2018-03-09 10:04:02 INFO  root:18 -  Reset Menu 
+2018-03-09 10:04:02 INFO  root:18 -  Reset Menu 
+2018-03-09 10:04:02 INFO  root:18 -  Locked 
+2018-03-09 10:04:02 INFO  root:18 -  approved 
+2018-03-09 10:04:02 INFO  root:18 -  Account Created 
+2018-03-09 10:04:02 INFO  root:18 -  Menu Reset 
+2018-03-09 10:29:35 INFO  root:18 -  Good Account 
+2018-03-09 10:29:35 INFO  root:18 -  Regular 
+2018-03-09 10:29:35 INFO  root:18 -  Good Account 
+2018-03-09 10:29:35 INFO  root:18 -  Good Account 
+2018-03-09 10:29:35 INFO  root:18 -  Regular 
+2018-03-09 10:29:35 INFO  root:18 -  Good Account 
+2018-03-09 10:29:35 INFO  root:18 -  set admin 
+2018-03-09 10:29:35 INFO  root:18 -  Good Account 
+2018-03-09 10:29:35 INFO  root:18 -  Regular 
+2018-03-09 10:29:35 INFO  root:18 -  Added 
+2018-03-09 10:29:35 INFO  root:18 -  Choice Selected 
