@@ -25,11 +25,37 @@ public class RunBank {
 	 * @param args
 	 */
 	static Scanner scanner = new Scanner(System.in);
-
+	static AccountDao n= new AccountDaoImpl();
 	public static void main(String[] args) {
 		System.out.println("Connecting to db....");
+		System.out.println("\r\n" + 
+				"___________$___________$\r\n" + 
+				"_____$____$$___________$$____$\r\n" + 
+				"____$$____$$____________$$___$$\r\n" + 
+				"____$$___$$_____________$$____$\r\n" + 
+				"___$$____$$____$___$____$$____$$\r\n" + 
+				"___$$____$$____$$$$$____$$____$$\r\n" + 
+				"___$$___$$$___$$$$$$$___$$$___$$\r\n" + 
+				"__$$$___$$$___$$$$$$$___$$$___$$$\r\n" + 
+				"__$$$___$$$___$$$$$$$___$$$___$$$\r\n" + 
+				"__$$$___$$$____$$$$$____$$$___$$$\r\n" + 
+				"__$$$____$$$___$$$$$___$$$___$$$$\r\n" + 
+				"___$$$$$$$$$$$$$$$$$$$$$$$$$$$$$\r\n" + 
+				"__________$$$$$$$$$$$$$$\r\n" + 
+				"___________$$$$$$$$$$$$\r\n" + 
+				"_____$$$$$$$$$$$$$$$$$$$$$$$$$\r\n" + 
+				"_$$$$$$$$$$_$$$$$$$$$$$_$$$$$$$$$$\r\n" + 
+				"$$$$___$$$__$$$$$$$$$$$__$$$___$$$$\r\n" + 
+				"$$$____$$$__$$$$$$$$$$$__$$$____$$$\r\n" + 
+				"_$$$___$$$__$$$$$$$$$$$__$$$___$$$\r\n" + 
+				"_$$$___$$$__$$$$$$$$$$$__$$$___$$$\r\n" + 
+				"__$$____$$___$$$$$$$$$___$$____$$\r\n" + 
+				"__$$$___$$___$$$$$$$$$___$$___$$$\r\n" + 
+				"___$$____$$___$$$$$$$___$$____$$\r\n" + 
+				"____$$____$____$$$$$____$____$$\r\n" + 
+				"_____$_____$___________$_____$\r\n" + 
+				"______$____$___________$____$");
 		displaySql();
-		//RunBank rb = new RunBank();
 		Bank.startBank();
 		System.out.println("1. Open an Account");
 		System.out.println("2. Deposit");
@@ -115,14 +141,10 @@ public class RunBank {
 					if (withdrawStatus == true) { // you will need getters and other methods from the bank to make this
 													// access a specific account
 						System.out.println("Withdrawn");
-						//RunBank rb = new RunBank();
-						//rb.
 						theMenu();
 						LoggingUtil.logInfo(" Reset Menu ");
 					} else {
 						System.out.println("Fails to withdraw");
-						//RunBank rb = new RunBank();
-						//rb.
 						theMenu();
 						LoggingUtil.logInfo(" Reset Menu ");
 					}
@@ -173,7 +195,9 @@ public class RunBank {
 		if (ssnCheck(ssn)) {
 			LockedUser lu = new LockedUser(name, password, ssn);
 			Bank.addLu(lu);
+			n.createAccountLocked(lu);
 			System.out.println("User added");
+			//createAccountDB(lu);
 			try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("lockedUsers.dat"))) {
 
 				oos.writeObject(lu);

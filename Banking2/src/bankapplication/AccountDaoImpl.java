@@ -32,6 +32,27 @@ public class AccountDaoImpl implements AccountDao {
 		}
 
 	}
+public void createAccountLocked(LockedUser lockeduser) {
+		
+		Connection conn = ConnectionFactory.getInstance().getConnection();
+		
+		try {
+			Statement statement = conn.createStatement();
+			
+			String sql = "INSERT INTO LockedUser (accountL,lockedName,lockedpassword,lockedssn,lockedtype) VALUES('"+lockeduser.getAccountNumber()+"', '"+lockeduser.getName()+ "', '"
+			+lockeduser.getPassword()+"','"+lockeduser.getSsn()+"', '"+lockeduser.getType()+"')";
+			//('"+account.getAccountNumber()+"', '"+account.getBalance()+"')";
+			
+			int rowsAffected = statement.executeUpdate(sql);
+			
+			System.out.println("Rows updated " + rowsAffected);
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	}
 	@Override
 	public Account retrieveAccountDB(Account account) {
 Connection conn = ConnectionFactory.getInstance().getConnection();

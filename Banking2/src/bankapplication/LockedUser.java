@@ -15,7 +15,7 @@ public class LockedUser extends Customer implements Serializable {
 	private String password; // last name CHANGE IT
 	private int ssn;   //fields
 	private String type;
-	private int accountNumber;
+	private static int accountNumber;
 	
 	
 	

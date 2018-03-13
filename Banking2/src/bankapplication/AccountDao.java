@@ -9,6 +9,8 @@ public interface AccountDao {
 	
 	public void createAccountDB(Account account);
 	
+	public void createAccountLocked(LockedUser lockeduser);
+	
 	public Account retrieveAccountDB(Account account);
 	
 	public ArrayList<Account> retrieveAccountDB();
